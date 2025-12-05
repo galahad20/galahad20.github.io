@@ -1,12 +1,203 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-  </head>
-  <body>
-    <h1>My Portfolio</h1>
-    <p><a href="https://galahad20.github.io/qr-code-component/">Check out my QR-component here !</a></p>
-  </body>
+<!--
+Simple static portfolio template (single-file) — ready to deploy to GitHub Pages.
+How to use:
+ 1. Save this file as `index.html` in the root of your repo (or in /docs if you use project page).
+ 2. Replace text, images (assets/img/...), links to GitHub/Live demo/CV.
+ 3. Commit & push to repo named `yourusername.github.io` for user page OR follow GitHub Pages settings.
+
+Notes:
+ - Images referenced are placeholders (`assets/img/project1.png` etc.). Create an `assets/img/` folder
+   and add your project screenshots. You can also use online image URLs.
+ - Keep filenames lowercase and no spaces.
+ - For a custom domain add a `CNAME` file with your domain.
+-->
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dimas Abian Ihsan — Data Engineering & Analytics Portfolio</title>
+  <meta name="description" content="Portfolio Nama Kamu — Project Data Engineering & Analytics" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <style>
+    :root{
+      --bg: #0b0b0b;
+      --card: #0f1720;
+      --muted: #9aa4ac;
+      --accent: #7dd3fc;
+      --glass: rgba(255,255,255,0.03);
+      --maxw: 1100px;
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071013 0%, #0b0b0b 100%);color:#e6eef3}
+    a{color:var(--accent);text-decoration:none}
+    .wrap{max-width:var(--maxw);margin:48px auto;padding:0 20px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#0ea5e9,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    .brand h1{font-size:20px;margin:0}
+    .brand p{margin:0;color:var(--muted);font-size:13px}
+
+    nav{display:flex;gap:16px;align-items:center}
+    .btn{padding:8px 12px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.05);font-size:14px}
+
+    .hero{display:flex;align-items:center;justify-content:space-between;margin-top:48px;gap:24px}
+    .intro{max-width:640px}
+    .intro h2{font-size:36px;margin:0 0 8px 0;line-height:1.02}
+    .intro p{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:12px}
+    .cta .primary{background:var(--accent);color:#02141a;padding:10px 14px;border-radius:10px;font-weight:600}
+
+    .projects{margin-top:44px}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:flex;gap:14px;align-items:flex-start}
+    .thumb{width:160px;height:100px;border-radius:8px;flex:0 0 160px;background-size:cover;background-position:center;border:1px solid rgba(255,255,255,0.04)}
+    .meta{flex:1}
+    .meta h3{margin:0 0 6px 0}
+    .meta p{margin:0;color:var(--muted);font-size:14px}
+    .badges{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+    .badge{font-size:12px;padding:6px 8px;border-radius:999px;background:var(--glass);color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+    .links{display:flex;gap:8px;margin-top:12px}
+    .links a{font-size:13px;padding:6px 8px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.03)}
+
+    footer{margin:56px 0 24px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* responsive */
+    @media (max-width:900px){
+      .grid{grid-template-columns:1fr}
+      .hero{flex-direction:column;align-items:flex-start}
+      .thumb{width:120px;height:88px}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">NG</div>
+        <div>
+          <h1>Dimas Abian Ihsan</h1>
+          <p>Data Engineer — SQL · Python · Metabase</p>
+        </div>
+      </div>
+      <nav>
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#contact">Contact</a>
+        <a class="btn" href="/resume.pdf" target="_blank">Download CV</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="intro">
+        <h2>Portfolio — Project Data Engineering & Analytics</h2>
+        <p>Saya menampilkan 4 proyek yang sudah dibuat: pipeline ETL, dashboard Metabase, optimisasi query PostgreSQL, dan analisis efisiensi konsumsi bahan bakar alat berat.</p>
+        <div class="cta">
+          <a class="primary" href="#projects">Lihat Proyek</a>
+          <a class="btn" href="https://github.com/username" target="_blank">GitHub</a>
+        </div>
+      </div>
+      <div style="min-width:220px;max-width:340px;">
+        <div style="background:linear-gradient(180deg,#071226,#08202b);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.04)">
+          <p style="margin:0;color:var(--muted);font-size:13px">Highlight</p>
+          <h3 style="margin:8px 0 0 0">4 Projects · ETL · SQL · Dashboard</h3>
+          <p style="margin:6px 0 0 0;color:var(--muted);font-size:13px">Last updated: Dec 2025</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2 style="margin:0 0 14px 0">Projects</h2>
+      <div class="grid">
+        <!-- Project 1 -->
+        <article class="card">
+          <div class="thumb" style="background-image:url('assets/img/project1.png')" aria-hidden="true"></div>
+          <div class="meta">
+            <h3>ETL Pipeline: Instant Delivery Performance</h3>
+            <p>ETL pipeline untuk memproses data instant delivery — ingest event CSV/JSON → transform (cleaning, sessionization, KPIs like delivery_time, SLA_breach) → load ke PostgreSQL. Pipeline dijalankan di Docker + scheduler Airflow. Output dipvisualisasikan di Metabase (dashboard operasional & SLA monitoring).</p>
+            <div class="badges">
+              <span class="badge">Python</span>
+              <span class="badge">Airflow</span>
+              <span class="badge">PostgreSQL</span>
+              <span class="badge">Metabase</span>
+            </div>
+            <div class="links">
+              <a href="#">Repo</a>
+              <a href="#">Dashboard</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card">
+          <div class="thumb" style="background-image:url('assets/img/project2.png')" aria-hidden="true"></div>
+          <div class="meta">
+            <h3>Dashboard Logistik — Metabase</h3>
+            <p>Dashboard interaktif untuk monitoring pengiriman & utilisasi armada. Chart utama: on-time rate, median delivery time, top-delay routes. Query dioptimasi di PostgreSQL dan disajikan di Metabase untuk stakeholder operasi.</p>
+            <div class="badges">
+              <span class="badge">Metabase</span>
+              <span class="badge">SQL</span>
+              <span class="badge">Performance</span>
+            </div>
+            <div class="links">
+              <a href="#">Screenshot</a>
+              <a href="#">Query</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card">
+          <div class="thumb" style="background-image:url('assets/img/project3.png')" aria-hidden="true"></div>
+          <div class="meta">
+            <h3>Analisis Anomali & Fraud Detection (Prototype)</h3>
+            <p>Prototipe deteksi anomali pada transaksi: feature engineering (time features, freq features, amount ratios), unsupervised clustering (DBSCAN / IsolationForest) untuk flagging outliers, dan interpretasi hasil untuk tindak lanjut. Terdapat notebook Jupyter dan visualisasi hasil (cluster plots, time series of flagged events).</p>
+            <div class="badges">
+              <span class="badge">Python</span>
+              <span class="badge">scikit-learn</span>
+              <span class="badge">pandas</span>
+            </div>
+            <div class="links">
+              <a href="#">Notebook</a>
+              <a href="#">Visual</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="card">
+          <div class="thumb" style="background-image:url('assets/img/project4.png')" aria-hidden="true"></div>
+          <div class="meta">
+            <h3>Bike Sharing — Analisis Data</h3>
+            <p>Analisis data bike sharing: eksplorasi, pembersihan, analisis permintaan harian & faktor pengaruh (cuaca, hari, jam). Laporan dan notebook beserta visual disimpan di GitHub: <a href="https://github.com/galahad20/B244006E_analisis_data" target="_blank">galahad20/B244006E_analisis_data</a>.</p>
+            <div class="badges">
+              <span class="badge">pandas</span>
+              <span class="badge">matplotlib</span>
+              <span class="badge">EDA</span>
+            </div>
+            <div class="links">
+              <a href="https://github.com/galahad20/B244006E_analisis_data" target="_blank">Repo</a>
+              <a href="#">Report</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:40px">
+      <h2 style="margin:0 0 10px 0">Contact</h2>
+      <p style="margin:0 0 10px 0;color:var(--muted)">Email: <a href="mailto:dimasabian01@gmail.com">dimasabian01@gmail.com</a> · GitHub: <a href="https://github.com/username" target="_blank">@username</a></p>
+    </section>
+
+    <footer>
+      © 2025 Dimas Abian — Built with simple static HTML. Hosted on GitHub Pages.
+    </footer>
+  </div>
+</body>
 </html>
