@@ -3,15 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dimas Abian | Data Engineer</title>
+    <title>Portfolio Website | Dimas Abian</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdfcf8; color: #1c1c1c; }
         .mono { font-family: 'JetBrains Mono', monospace; }
         .border-warm { border-color: #eceae2; }
-        .bg-warm-accent { background-color: #f7f5ed; }
-        .text-accent { color: #d97706; }
+        
+        .typing-container {
+            display: inline-block;
+        }
+        .typing-text {
+            overflow: hidden;
+            border-right: .15em solid #d97706;
+            white-space: nowrap;
+            margin: 0;
+            letter-spacing: -0.02em;
+            animation: 
+                typing 3s steps(25, end),
+                blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #d97706; }
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+            color: #a1a1aa; /* Zinc 400 */
+        }
+        .social-icon:hover {
+            color: #d97706; /* Amber 600 */
+            transform: translateY(-2px);
+        }
+
         .project-img { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
         .project-card:hover .project-img { transform: scale(1.03); }
     </style>
@@ -19,7 +52,7 @@
 <body class="antialiased selection:bg-orange-100 selection:text-orange-900">
 
     <nav class="fixed top-0 w-full z-50 bg-[#fdfcf8]/90 backdrop-blur-md border-b border-warm px-8 py-6 flex justify-between items-center">
-        <span class="font-extrabold tracking-tighter text-xl italic">Dimas Abian.</span>
+        <span class="font-extrabold tracking-tighter text-xl italic uppercase">Portfolio Website.</span>
         <div class="flex gap-12 text-[10px] font-bold uppercase tracking-[0.2em]">
             <a href="#work" class="hover:text-amber-600 transition">Works</a>
             <a href="#info" class="hover:text-amber-600 transition">Capabilities</a>
@@ -30,16 +63,38 @@
     <main class="max-w-6xl mx-auto px-8">
         
         <section class="pt-56 pb-32">
-            <h1 class="text-7xl md:text-[10rem] font-extrabold tracking-tighter leading-[0.8] mb-12 uppercase">
-                Data <br> <span class="text-[#e9e6d9] uppercase">Engineer.</span>
-            </h1>
-            <div class="flex flex-col md:flex-row justify-between items-start gap-12">
-                <p class="max-w-xl text-xl text-zinc-500 leading-relaxed font-light">
-                    Membangun alur data melalui <span class="text-black font-semibold uppercase italic">Scalable Data Pipelines</span>, pemrosesan dataset skala besar, dan otomasi workflow untuk pengambilan keputusan strategis.
-                </p>
-                <div class="flex flex-col items-start gap-2">
+            <div class="flex flex-col md:flex-row justify-between items-end gap-12">
+                <div class="max-w-xl">
+                    <div class="typing-container mb-2">
+                        <h1 class="typing-text text-4xl md:text-5xl font-extrabold tracking-tighter uppercase">
+                            Hello, I'm Dimas.
+                        </h1>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-light tracking-tighter text-[#d9d5c5] uppercase italic mb-8">
+                        Data Engineer
+                    </h2>
+                    
+                    <p class="text-lg text-zinc-500 leading-relaxed font-light mb-8">
+                        Membangun alur data melalui <span class="text-black font-semibold uppercase italic">Scalable Data Pipelines</span>, pemrosesan dataset skala besar, dan otomasi workflow untuk pengambilan keputusan strategis.
+                    </p>
+
+                    <div class="flex gap-6 items-center">
+                        <a href="#" target="_blank" class="social-icon" aria-label="LinkedIn">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-icon" aria-label="GitHub">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-icon" aria-label="Instagram">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <div class="h-[1px] w-12 bg-warm-accent"></div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-start md:items-end gap-2 pb-2">
                     <span class="text-[10px] mono font-bold uppercase tracking-widest text-amber-600">Verified Credential</span>
-                    <div class="px-4 py-2 bg-amber-50 border border-amber-100 rounded text-xs font-bold text-amber-900 uppercase tracking-tighter">
+                    <div class="px-6 py-3 bg-amber-50 border border-amber-100 rounded text-sm font-bold text-amber-900 uppercase tracking-tighter shadow-sm">
                         Associate Data Scientist — BNSP
                     </div>
                 </div>
@@ -50,18 +105,17 @@
             <h2 class="text-xs font-bold text-zinc-300 uppercase tracking-[0.5em] mb-24 italic underline decoration-amber-500 underline-offset-8">Selected Projects Archive</h2>
             
             <div class="space-y-48">
-                
                 <div class="project-card grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                     <div class="md:col-span-7">
-                        <div class="overflow-hidden rounded-2xl bg-warm-accent border border-warm shadow-sm aspect-video">
-                            <img src="assets/img/etl-instant-delivery.png" alt="Metabase Dashboard Visualization" class="project-img w-full h-full object-cover shadow-inner">
+                        <div class="overflow-hidden rounded-2xl bg-zinc-100 border border-warm shadow-sm aspect-video">
+                            <img src="assets/img/etl-instant-delivery.png" alt="Metabase Dashboard" class="project-img w-full h-full object-cover">
                         </div>
                     </div>
                     <div class="md:col-span-5">
                         <span class="mono text-[10px] text-amber-600 font-bold uppercase tracking-widest block mb-4">01 // ETL Infrastructure</span>
-                        <h3 class="text-4xl font-extrabold tracking-tighter mb-6 leading-tight uppercase italic">Instant Delivery Performance</h3>
+                        <h3 class="text-3xl font-extrabold tracking-tighter mb-6 leading-tight uppercase italic">Instant Delivery Performance</h3>
                         <p class="text-zinc-500 text-sm leading-relaxed mb-8">
-                            Pipeline otomatis yang memproses 40.000+ catatan logistik. Menggunakan <strong>Docker</strong> dan <strong>PostgreSQL</strong> untuk orkestrasi, serta menyajikan insight SLA sebesar 65% secara real-time di Metabase.
+                            Pipeline otomatis yang memproses 40.000+ catatan logistik menggunakan Docker dan PostgreSQL, menyajikan insight SLA sebesar 65% secara real-time di Metabase.
                         </p>
                         <div class="flex gap-6 items-center">
                             <a href="https://github.com/galahad20/ETL-Instant-delivery-performance" target="_blank" class="text-[10px] font-bold border-b border-black pb-1 hover:text-amber-600 hover:border-amber-600 transition uppercase tracking-widest">Access_Repo</a>
@@ -73,9 +127,9 @@
                 <div class="project-card grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                     <div class="md:col-span-5 order-2 md:order-1">
                         <span class="mono text-[10px] text-amber-600 font-bold uppercase tracking-widest block mb-4">02 // Machine Learning</span>
-                        <h3 class="text-4xl font-extrabold tracking-tighter mb-6 leading-tight uppercase italic text-right md:text-left">Fraud & Anomaly Detection</h3>
+                        <h3 class="text-3xl font-extrabold tracking-tighter mb-6 leading-tight uppercase italic text-right md:text-left">Fraud & Anomaly Detection</h3>
                         <p class="text-zinc-500 text-sm leading-relaxed mb-8 text-right md:text-left">
-                            Analisis ribuan transaksi bank menggunakan teknik <strong>Unsupervised Clustering</strong>. Mengidentifikasi perilaku outlier melalui feature engineering yang presisi menggunakan Python untuk mendeteksi potensi anomali.
+                            Analisis ribuan transaksi bank menggunakan teknik clustering untuk mengidentifikasi perilaku outlier melalui feature engineering yang presisi menggunakan Python.
                         </p>
                         <div class="flex justify-end md:justify-start gap-6 items-center">
                             <a href="https://github.com/galahad20/Fraud-and-Anomaly-Detection-and-Analysis-on-Bank-Transaction-dataset" target="_blank" class="text-[10px] font-bold border-b border-black pb-1 hover:text-amber-600 hover:border-amber-600 transition uppercase tracking-widest">Access_Repo</a>
@@ -84,8 +138,8 @@
                     </div>
                     <div class="md:col-span-7 order-1 md:order-2">
                         <div class="aspect-video bg-[#24221d] rounded-2xl flex flex-col items-center justify-center border border-[#36332c] shadow-2xl">
-                             <div class="mono text-[10px] text-amber-500 mb-2 opacity-50 uppercase tracking-widest">Algorithm: DBSCAN / IsolationForest</div>
-                             <div class="text-zinc-500 italic font-light text-2xl uppercase tracking-tighter underline decoration-zinc-800">Anomaly_Detection_Model</div>
+                             <div class="mono text-[10px] text-amber-500 mb-2 opacity-50 uppercase tracking-widest">Algorithm: Clustering</div>
+                             <div class="text-zinc-500 italic font-light text-xl uppercase tracking-tighter underline decoration-zinc-800">Anomaly_Model</div>
                         </div>
                     </div>
                 </div>
@@ -94,14 +148,14 @@
                     <div class="md:col-span-7">
                         <div class="aspect-video bg-amber-50/50 rounded-2xl flex flex-col items-center justify-center border border-amber-100/50">
                              <div class="mono text-[10px] text-amber-400 mb-2 uppercase tracking-widest">Dataset: 17k+ Records</div>
-                             <div class="text-amber-900 italic font-extrabold text-4xl uppercase tracking-tighter">Bike_Sharing_Analysis</div>
+                             <div class="text-amber-900 italic font-extrabold text-3xl uppercase tracking-tighter">Bike_Analysis</div>
                         </div>
                     </div>
                     <div class="md:col-span-5">
                         <span class="mono text-[10px] text-amber-600 font-bold uppercase tracking-widest block mb-4">03 // Data Analysis</span>
-                        <h3 class="text-4xl font-extrabold tracking-tighter mb-6 leading-tight uppercase italic">Bike Rental Demand Analysis</h3>
+                        <h3 class="text-3xl font-extrabold tracking-tighter mb-6 leading-tight uppercase italic">Bike Rental Analysis</h3>
                         <p class="text-zinc-500 text-sm leading-relaxed mb-8">
-                            Eksplorasi mendalam pada dataset penyewaan sepeda menggunakan Python dan SQL. Fokus pada pembersihan data, identifikasi tren musiman, dan pola permintaan berdasarkan variabel lingkungan.
+                            Eksplorasi dataset penyewaan sepeda menggunakan Python dan SQL untuk menemukan pola penggunaan harian dan tren permintaan berdasarkan faktor lingkungan.
                         </p>
                         <div class="flex gap-6 items-center">
                             <a href="https://github.com/galahad20/B244006E_analisis_data" target="_blank" class="text-[10px] font-bold border-b border-black pb-1 hover:text-amber-600 hover:border-amber-600 transition uppercase tracking-widest">Access_Repo</a>
@@ -109,20 +163,19 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
         <section id="info" class="py-32 border-t border-warm">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
                 <div class="md:col-span-4">
-                    <h2 class="text-xs font-bold text-zinc-300 uppercase tracking-[0.5em] mb-8 italic uppercase italic text-amber-600">Technical Stack</h2>
+                    <h2 class="text-xs font-bold text-zinc-300 uppercase tracking-[0.5em] mb-8 italic uppercase text-amber-600">Technical Stack</h2>
                 </div>
                 <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div>
                         <h4 class="text-[10px] font-bold uppercase tracking-widest text-amber-700 mb-4 italic underline underline-offset-4 font-extrabold">Data Engineering</h4>
                         <p class="text-sm font-medium text-zinc-600 leading-relaxed uppercase tracking-tight">
-                            ETL Pipelines, Docker, BigQuery, Data Warehousing (dbt), AWS Stack (Glue, S3), Pentaho.
+                            ETL Pipelines, Docker, BigQuery, dbt, AWS Stack (Glue, S3), Pentaho.
                         </p>
                     </div>
                     <div>
@@ -134,14 +187,12 @@
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer class="py-20 border-t border-warm px-8 bg-[#fdfcf8]">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
             <div class="flex flex-col gap-2">
-                <span class="mono text-[9px] text-zinc-300 uppercase tracking-[0.4em] font-bold">Updated: April 2026</span>
-                <span class="text-xs font-bold text-zinc-400 italic">Surakarta / East Kalimantan, Indonesia</span>
+                <span class="text-xs font-bold text-gray-400 italic">Indonesia</span>
             </div>
             <div class="flex gap-12 text-[10px] font-bold uppercase tracking-widest">
                 <a href="https://linkedin.com/in/dimasabian20" target="_blank" class="hover:text-amber-600 transition border-b border-transparent hover:border-amber-600">LinkedIn</a>
@@ -151,5 +202,8 @@
         </div>
     </footer>
 
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
